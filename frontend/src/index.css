@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.Forms{
+
+  margin: 4rem 0 2rem;
+}
+
+.n-brand{
+
+  margin-left: 2rem;
+  cursor: pointer;
+}
+
+.add:hover{
+
+  background-color: lightcoral;
+  color: black;
+}
+.delete:hover{
+
+  background-color: lightcoral;
+  color: black;
+}
+.update:hover{
+
+  background-color: lightcoral;
+  color: black;
+}
+.view:hover{
+
+  background-color: lightcoral;
+  color: black;
+}
+.center { 
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border: 1px solid lightgreen;
+  padding: 3rem 8rem;
+
+}
+
