@@ -1,0 +1,65 @@
+import React, { Component } from 'react';
+import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
+import { useState, useEffect } from 'react';
+import Axios from 'axios';
+
+
+const DeleteProduct = ()=>{
+
+    const [listofProducts, setlistofProducts] = useState([]);
+
+    useEffect(()=>{
+
+        Axios.get("http://localhost:3001/getall").then((response)=>{
+    
+          setlistofProducts(response.data); 
+        })
+      },[]); 
+
+      const Delete = (id)=>{
+        Axios.delete(`http://localhost:3001/deleteproduct/${id}`); 
+
+      }
+
+    return (
+
+
+        <Table striped bordered hover variant="dark">
+          <thead>
+            <tr>
+              <th>Product Id</th>
+              <th>Product Name</th>
+              <th>Model Number</th>
+              <th>Manufacturer</th>
+              <th>Package Quantity</th>
+              <th>Brand Name</th>
+              <th>Payment</th>
+            </tr>
+          </thead>
+
+          {listofProducts.map((newProduct)=>{
+            return(
+            <tbody>
+            <tr>
+              <td>{newProduct.productId}</td>
+              <td>{newProduct.productName}</td>
+              <td>{newProduct.modelNumber}</td>
+              <td>{newProduct.manufacturer}</td>
+              <td>{newProduct.packageQuantity}</td>
+              <td>{newProduct.brandName}</td>
+              <td>{newProduct.payment}</td>
+            </tr>
+            <Button variant="danger" onClick={()=>{Delete(newProduct._id)}}>Delete</Button>{' '}
+            </tbody>
+        )
+
+          })}
+          
+        </Table>
+      );
+        
+}
+
+
+export default DeleteProduct; 

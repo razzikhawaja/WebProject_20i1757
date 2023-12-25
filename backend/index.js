@@ -19,7 +19,9 @@ const {
 app.use(express.json()); 
 app.use(cors()); 
 
-mongoose.connect(""); 
+mongoose.connect("mongodb+srv://razzi:0984@cluster0.vuen418.mongodb.net/Project?retryWrites=true&w=majority").then(() => {
+    console.log("Database connected successfully")
+}); 
 
 app.listen(3001, ()=>{
 
