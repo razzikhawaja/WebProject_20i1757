@@ -14,6 +14,11 @@ const {
     updateProduct
 
 } = require("./controllers/productcontroller"); 
+const dashboardRoutes = require('./routes/dashboardRoutes');
+const customerRoutes = require('./routes/customerRoutes');
+const tourAgentRoutes = require('./routes/tourAgentRoutes'); 
+const tourRoutes = require('./routes/tourRoutes'); 
+
 
 
 app.use(express.json()); 
@@ -30,12 +35,11 @@ app.listen(3001, ()=>{
 
 
 app.get("/getall", getALLProducts); 
-
 app.delete("/deleteproduct/:id", deleteById);
-
 app.put("/updateproduct/:id", updateProduct);
-
 app.get("/getproduct/:id", getProductById); 
-
 app.post("/addproduct", addProduct);
-    
+app.use('/dashboard', dashboardRoutes);  
+app.use('/customer', customerRoutes);
+app.use('/touragent', tourAgentRoutes); 
+app.use('/tour', tourRoutes);
