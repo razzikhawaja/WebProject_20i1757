@@ -13,6 +13,7 @@ const ViewAddedProducts = ()=>{
         Axios.get("http://localhost:3001/getall").then((response)=>{
     
           setlistofProducts(response.data); 
+          console.log(setlistofProducts)
         })
       },[]); 
 

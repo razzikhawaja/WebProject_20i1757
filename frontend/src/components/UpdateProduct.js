@@ -104,7 +104,7 @@ const UpdateProduct = ()=>{
           
         </Table>
 
-  <div class="modal" tabindex="-1" >
+  <div class="modal" tabIndex="-1" >
      
      <Modal show={ViewEdit}
      onHide={handleViewEditClose}

@@ -29,28 +29,7 @@ const updateProduct = async(req,res)=>{
     
 }
 
-// const updateProduct = async (req,res)=>{
 
-//     const {id} = req.params
-
-//     if(!mongoose.Types.ObjectId.isValid(id)){
-
-//         return res.status(404).json({err: "no such product exists."}); 
-//     }
-
-//     const updated = await productModel.findOneAndUpdate({_id: id}, {
-//     ...req.body
-//     });
-
-//     if(!updated){
-
-//         return res.status(404).json({err: "no such product exists."}); 
-//     }
-
-//     res.status(200).json(updated); 
-
-
-// }
 
 const deleteById = async (req,res)=>{
 
@@ -67,7 +46,8 @@ const deleteById = async (req,res)=>{
 
     if(!deleteProduct){
 
-        return res.status().json({err: "Id is not right."}); 
+        return res.status(200).json({err: "Id is not right."}); 
+
     }
 
     res.status(200).json(deleteProduct);
